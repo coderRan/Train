@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_newsImg"
+            android:layout_width="@dimen/news_img_layout_width"
+            android:layout_height="@dimen/news_img_layout_height"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_newsTitle"
+            android:layout_alignParentLeft="true"
+            style="@style/news_item_text"
+            android:layout_marginRight="@dimen/news_marginRight"
+            android:layout_toLeftOf="@id/iv_newsImg"
+            android:text="这是新闻标题"
+            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/iv_keep_del"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="@dimen/news_img_layout_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/channel_bar_right_shadow"
+            android:src="@mipmap/collection_check_box" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/news_marginTop">
+        <TextView
+            android:id="@+id/tv_newsSrc"
+            style="@style/news_item_text"
+            android:layout_centerVertical="true"
+            android:text="新闻来源" />
+
+        <TextView
+            android:id="@+id/tv_newsTime"
+            style="@style/news_item_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/news_marginLeft"
+            android:layout_toRightOf="@id/tv_newsSrc"
+            android:text="评论时间" />
+
+        <ImageView
+            android:id="@+id/iv_news_item_Del"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/list_icon_operation_nor" />
+
+        <TextView
+            android:id="@+id/tv_newsComm"
+            style="@style/news_item_text"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_news_item_Del"
+            android:text="评论1111" />
+    </RelativeLayout>
+    <TextView
+        android:background="@color/colorSplik"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+</LinearLayout>

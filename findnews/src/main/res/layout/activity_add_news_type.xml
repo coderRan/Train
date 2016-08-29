@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zdr.findnews.AddNewsTypeActivity">
+    <RelativeLayout
+        android:background="@color/colorbg"
+        android:id="@+id/rl_add_news_type_top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/iv_add_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/top_back_ic"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/main_text_size"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="频道管理"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_splik"
+        android:layout_below="@id/rl_add_news_type_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorSplik"
+        />
+    <ScrollView
+        android:paddingTop="10dp"
+        android:layout_below="@id/tv_splik"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorbg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/grid_item_bg"
+                    android:text="@string/addType_edit"
+                    android:textColor="#ff0000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_edit"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/myNewsType"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <com.zdr.findnews.view.NewsTypeGridView
+                android:id="@+id/gv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="4"
+                android:verticalSpacing="5dp">
+
+            </com.zdr.findnews.view.NewsTypeGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="@string/comNewsType"
+                android:textColor="@color/colorText"
+                android:textSize="20sp" />
+
+            <com.zdr.findnews.view.NewsTypeGridView
+                android:id="@+id/gv_type2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="4"
+                android:verticalSpacing="5dp">
+
+            </com.zdr.findnews.view.NewsTypeGridView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

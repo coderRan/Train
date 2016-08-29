@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/toolbar_main"
+    android:orientation="vertical">
+    <!--主界面-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_main"
+        android:background="@color/colorbg">
+
+        <RelativeLayout
+            android:id="@+id/rl_main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_tabs_height">
+
+            <ImageView
+                android:id="@+id/iv_add_newstype"
+                android:layout_width="@dimen/main_tabs_height"
+                android:layout_height="@dimen/main_tabs_height"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/index_icon_add_nor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_tabs_height"
+                android:layout_toLeftOf="@id/iv_add_newstype"
+                android:src="@mipmap/nav_rightarrow" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tl_newsType_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_tabs_height"
+                android:layout_toLeftOf="@id/iv_add_newstype">
+
+            </android.support.design.widget.TabLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_tabs_height"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/nav_leftarrow" />
+
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_main_tabs">
+
+        </android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+    <!--侧滑菜单-->
+    <RelativeLayout
+        android:layout_width="255dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorbg">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/rl_header_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@mipmap/center_bg_personal">
+
+                    <circleImageViewlib.CircleImageView
+                        android:id="@+id/cir_header"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/header" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cir_header"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+                        android:text="@string/userName"
+                        android:textSize="@dimen/main_text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/detail_icon_comment_nor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_1"
+                        android:text="我的评论"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_message_little" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_2"
+                        android:text="我的信息"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/detail_ion_collection" />
+
+                    <TextView
+                        android:id="@+id/tv_keep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_3"
+                        android:text="我的收藏"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/detail_ion_collection" />
+
+                    <TextView
+                        android:id="@+id/tv_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_4"
+                        android:text="今日天气"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/detail_ion_collection" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_5"
+                        android:text="今日运势"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_menu_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_set_nor" />
+
+                    <TextView
+                        android:id="@+id/tv_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/iv_menu_6"
+                        android:gravity="left"
+                        android:text="设置"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/main_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/center_icon_back_arrow" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

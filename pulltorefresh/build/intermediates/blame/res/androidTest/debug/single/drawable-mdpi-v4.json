@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/indicator_arrow.png",
+        "source": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/bundles/debug/res/drawable-mdpi-v4/indicator_arrow.png"
+    },
+    {
+        "merged": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/default_ptr_rotate.png",
+        "source": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/bundles/debug/res/drawable-mdpi-v4/default_ptr_rotate.png"
+    },
+    {
+        "merged": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/default_ptr_flip.png",
+        "source": "/home/zdr/AndroidStudioProjects/Train/pulltorefresh/build/intermediates/bundles/debug/res/drawable-mdpi-v4/default_ptr_flip.png"
+    }
+]

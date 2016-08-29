@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">findnews</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addType_edit">编辑</string>
+    <string name="myNewsType">我的频道</string>
+    <string name="comNewsType">频道推荐</string>
+    <string name="userName">这是一个很帅的用户名</string>
+
+    <array name="textSize">
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+        <item>特大</item>
+    </array>
+    <array name="loadType">
+        <item>最佳效果(下载大图)</item>
+        <item>较省流量(智能下图)</item>
+        <item>极省流量(不下载图)</item>
+    </array>
+</resources>
