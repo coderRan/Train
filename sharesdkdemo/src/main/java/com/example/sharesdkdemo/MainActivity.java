@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         // site是分享此内容的网站名称，仅在QQ空间使用
         oks.setSite("功能测试：app name");
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl("http://www.csdn.net/");
         // 启动分享GUI
         oks.show(this);
     }
