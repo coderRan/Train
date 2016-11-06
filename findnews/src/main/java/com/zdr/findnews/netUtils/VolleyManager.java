@@ -7,7 +7,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 /**
- * 对volley请求 NetNewsRequest 进行管理。是对volley的二次封装
+ * 对volley请求 NetNewsRequest 进行管理。对volley的二次封装
  * Created by zdr on 16-8-20.
  */
 public class VolleyManager {

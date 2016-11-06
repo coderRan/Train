@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -31,7 +32,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.common.Constants;
@@ -50,6 +53,7 @@ import org.json.JSONObject;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,6 +67,7 @@ import butterknife.OnClick;
 import circleImageViewlib.CircleImageView;
 
 public class NewsMainActivity extends AppCompatActivity {
+
 
     @BindView(R.id.toolbar_main)
     Toolbar toolbarMain;
@@ -97,6 +102,8 @@ public class NewsMainActivity extends AppCompatActivity {
     private IUiListener loginListener;
     private IUiListener userInfoiuiListener;
     private Tencent mTencent;
+    private TextView tvCancelLogin;
+    private CircleImageView cirLoginQq;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
     @Override
@@ -104,7 +111,7 @@ public class NewsMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_main);
         sp = getSharedPreferences(Constans.SP_FILE, MODE_PRIVATE);
-
+        editor = sp.edit();
         ButterKnife.bind(this);
         //设置Toolbar属性
         toolbarMain.setTitle("FindNews");
@@ -193,8 +200,8 @@ public class NewsMainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
-        TextView tvCancelLogin = (TextView) view.findViewById(R.id.tv_cancel_login);
-        CircleImageView cirLoginQq = (CircleImageView) view.findViewById(R.id.civ_login_qq);
+        tvCancelLogin = (TextView) view.findViewById(R.id.tv_cancel_login);
+        cirLoginQq = (CircleImageView) view.findViewById(R.id.civ_login_qq);
         //关闭登录窗口
         tvCancelLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,7 +227,7 @@ public class NewsMainActivity extends AppCompatActivity {
         display.getSize(p);
         loginWindow.setAnimationStyle(R.style.popuo_anim);
         loginWindow.showAtLocation(v, Gravity.NO_GRAVITY, 0, p.y - loginWindow.getHeight());
-        Log.e("size:", p.y + ":" + loginWindow.getHeight());
+
 
     }
 
@@ -269,9 +276,8 @@ public class NewsMainActivity extends AppCompatActivity {
                 Log.e("COMPLETE:", jo.toString());
                 try {
                     tvUserName.setText(jo.getString("nickname"));
-                    editor = sp.edit();
                     editor.putString("userName", jo.getString("nickname"));
-                    editor.apply();
+                    editor.commit();
 
                     Glide.with(NewsMainActivity.this).load(jo.getString("figureurl_qq_2"))
                             .asBitmap()
@@ -293,10 +299,12 @@ public class NewsMainActivity extends AppCompatActivity {
                                     try {
                                         fos = new FileOutputStream(head);
                                         byte[] buff = new byte[1024];
-                                        int line;
+                                        int line = 0;
                                         while ((line = isBm.read(buff)) != -1) {
                                             fos.write(buff, 0, line);
                                         }
+                                    } catch (FileNotFoundException e) {
+                                        e.printStackTrace();
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }

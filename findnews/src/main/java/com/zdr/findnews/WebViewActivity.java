@@ -232,20 +232,13 @@ public class WebViewActivity extends AppCompatActivity {
         };
 
         Bundle params = new Bundle();
-//        params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-//        params.putString(QQShare.SHARE_TO_QQ_TITLE, news.getTitle());
-//        params.putString(QQShare.SHARE_TO_QQ_SUMMARY,news.getUrl());
-//        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, news.getUrl());
-//        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,news.getPicUrl());
-//        params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "FindNews");
-        //params.putInt(QQShare.SHARE_TO_QQ_EXT_INT);
-
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-        params.putString(QQShare.SHARE_TO_QQ_TITLE, "qq第三方登录");
-        params.putString(QQShare.SHARE_TO_QQ_SUMMARY,"android实现qq第三方登录，并获取用户信息");
-        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,"http://blog.csdn.net/u013451048/article/details/52352810");
-        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,"http://avatar.csdn.net/C/3/D/1_u013451048.jpg");
+        params.putString(QQShare.SHARE_TO_QQ_TITLE, news.getTitle());
+        params.putString(QQShare.SHARE_TO_QQ_SUMMARY,news.getUrl());
+        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, news.getUrl());
+        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,news.getPicUrl());
         params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "FindNews");
+        //params.putInt(QQShare.SHARE_TO_QQ_EXT_INT);
         mTencent.shareToQQ(this, params, shareUiListener);
 
 //        params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE,QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT);

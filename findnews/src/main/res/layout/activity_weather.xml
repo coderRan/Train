@@ -1,350 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     tools:context="com.zdr.findnews.WeatherActivity">
-
     <RelativeLayout
+        android:background="@color/colorbg"
         android:id="@+id/rl_keep_top"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorbg">
-
+        android:layout_height="?attr/actionBarSize">
         <ImageView
             android:id="@+id/iv_weather_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@mipmap/top_back_ic" />
-
+            android:src="@mipmap/top_back_ic"/>
         <TextView
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/main_text_size"
+            android:gravity="center"
+            android:textColor="@color/colorText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="今日天气"
-            android:textColor="@color/colorText"
-            android:textSize="@dimen/main_text_size" />
+            android:text="今日天气"/>
 
     </RelativeLayout>
-
     <RelativeLayout
-        android:id="@+id/rl_today"
+        android:layout_below="@id/rl_keep_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_keep_top">
-        <RelativeLayout
-            android:layout_centerHorizontal="true"
-            android:id="@+id/rl_city_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/tv_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="城市"
-                android:textSize="30sp" />
-            <TextView
-                android:layout_marginLeft="@dimen/news_marginLeft"
-                android:id="@+id/tv_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/tv_city"
-                android:layout_centerHorizontal="true"
-                android:text="天气"
-                android:textSize="30sp" />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rl_city_type"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <TextView
-
-                android:id="@+id/_lowtemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="低温"
-                android:textSize="@dimen/main_text_size" />
-
-            <TextView
-                android:id="@+id/tv_currTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/news_marginLeft"
-                android:layout_marginRight="@dimen/news_marginRight"
-                android:text="当前"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/tv_hightemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="高温"
-                android:textSize="@dimen/main_text_size" />
-        </LinearLayout>
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:id="@+id/ll_forecast"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textSize="20sp"
-                android:layout_gravity="center"
-                android:id="@+id/tv_forecast1_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="星期"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/vt_forecast1_type"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="天气"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/tv_forecast1_temp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温度"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textSize="20sp"
-                android:layout_gravity="center"
-                android:id="@+id/tv_forecast2_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="星期"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/vt_forecast2_type"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="天气"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/tv_forecast2_temp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温度"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textSize="20sp"
-                android:layout_gravity="center"
-                android:id="@+id/tv_forecast3_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="星期"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/vt_forecast3_type"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="天气"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/tv_forecast3_temp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温度"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textSize="20sp"
-                android:layout_gravity="center"
-                android:id="@+id/tv_forecast4_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="星期"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/vt_forecast4_type"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="天气"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/tv_forecast4_temp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温度"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <ScrollView
-        android:layout_above="@id/ll_forecast"
-        android:layout_below="@id/rl_today"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_margin="@dimen/news_marginLeft"
-
+        android:layout_height="match_parent">
+        <TextView
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/main_text_size"
-                    android:text="感冒指数"
-                    />
-                <TextView
-                    android:layout_marginLeft="@dimen/news_marginLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="等级"/>
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="@dimen/news_marginTop"
-                android:id="@+id/tv_gm_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒"/>
-            <LinearLayout
-                android:layout_marginTop="@dimen/news_marginLeft"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/main_text_size"
-                    android:text="防晒指数"
-                    />
-                <TextView
-                    android:layout_marginLeft="@dimen/news_marginLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="等级"/>
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="@dimen/news_marginTop"
-                android:id="@+id/tv_fs_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="属中等强度紫外辐射天气，外出时应注意防护，建议涂擦SPF指数高于15，PA+的防晒护肤品。"/>
+            android:layout_height="wrap_content"
+            android:text="城市"
+            android:gravity="center"
+            android:textSize="30sp"/>
 
-            <LinearLayout
-                android:layout_marginTop="@dimen/news_marginLeft"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/main_text_size"
-                    android:text="穿衣指数"
-                    />
-                <TextView
-                    android:layout_marginLeft="@dimen/news_marginLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="等级"/>
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="@dimen/news_marginTop"
-                android:id="@+id/tv_ct_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="天气炎热，建议着短衫、短裙、短裤、薄型T恤衫等清凉夏季服装。"/>
-            <LinearLayout
-                android:layout_marginTop="@dimen/news_marginLeft"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/main_text_size"
-                    android:text="运动指数"
-                    />
-                <TextView
-                    android:layout_marginLeft="@dimen/news_marginLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="等级"/>
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="@dimen/news_marginTop"
-                android:id="@+id/tv_yd_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="有降水，推荐您在室内进行低强度运动；若坚持户外运动，须注意选择避雨防滑并携带雨具。"/>
-            <LinearLayout
-                android:layout_marginTop="@dimen/news_marginLeft"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/main_text_size"
-                    android:text="晾晒指数"
-                    />
-                <TextView
-                    android:layout_marginLeft="@dimen/news_marginLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="等级"/>
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="@dimen/news_marginTop"
-                android:id="@+id/tv_ls_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="有降水，不适宜晾晒。若需要晾晒，请在室内准备出充足的空间。"/>
-
-        </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>
